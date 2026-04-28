@@ -24,6 +24,14 @@
   height: 45px;
 }
 
+/* Carousel lướt ngang bằng thao tác kéo */
+#carousel-banner {
+  cursor: grab;
+}
+
+#carousel-banner:active {
+  cursor: grabbing;
+}
 /* End header */
 
 /* GLOBAL STYLES

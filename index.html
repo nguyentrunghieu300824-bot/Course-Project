@@ -24,6 +24,9 @@
     <!-- Font-boostraap -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" />
 
+    <!-- Base css -->
+    <link rel="stylesheet" href="./assets/css/base.css" />
+
     <!-- Style css -->
     <link rel="stylesheet" href="./assets/css/style.css" />
   </head>
@@ -57,7 +60,7 @@
               <a href="#" class="text-decoration-none text-dark d-flex align-items-center gap-2">
                 <div class="position-relative bg-light rounded-circle d-flex align-items-center justify-content-center header-action-icon">
                   <i class="bi bi-cart2 fs-5"></i>
-                  <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill" style="background-color: #f57224">0</span>
+                  <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill quantity-badge">0</span>
                 </div>
                 <span class="fw-medium" style="font-size: 15px">Giỏ hàng của tôi</span>
               </a>
@@ -66,7 +69,7 @@
               <a href="#" class="text-decoration-none text-dark d-flex align-items-center gap-2">
                 <div class="position-relative bg-light rounded-circle d-flex align-items-center justify-content-center header-action-icon">
                   <i class="bi bi-heart fs-5"></i>
-                  <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill" style="background-color: #f57224">0</span>
+                  <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill quantity-badge">0</span>
                 </div>
                 <span class="fw-medium" style="font-size: 15px">Yêu thích</span>
               </a>
@@ -154,12 +157,12 @@
       <!-- Section-one -->
       <section class="section-one">
         <!-- Carousel -->
-        <div id="demo" class="carousel slide" data-bs-ride="carousel">
+        <div id="carousel-banner" class="carousel slide" data-bs-ride="carousel">
           <!-- Indicators/dots -->
           <div class="carousel-indicators">
-            <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active rounded-circle" style="width: 10px; height: 10px"></button>
-            <button type="button" data-bs-target="#demo" data-bs-slide-to="1" class="rounded-circle" style="width: 10px; height: 10px"></button>
-            <button type="button" data-bs-target="#demo" data-bs-slide-to="2" class="rounded-circle" style="width: 10px; height: 10px"></button>
+            <button type="button" data-bs-target="#carousel-banner" data-bs-slide-to="0" class="active rounded-circle" style="width: 10px; height: 10px"></button>
+            <button type="button" data-bs-target="#carousel-banner" data-bs-slide-to="1" class="rounded-circle" style="width: 10px; height: 10px"></button>
+            <button type="button" data-bs-target="#carousel-banner" data-bs-slide-to="2" class="rounded-circle" style="width: 10px; height: 10px"></button>
           </div>
 
           <!-- The slideshow/carousel -->
@@ -174,18 +177,12 @@
               <img src="./assets/image/banner.jpg" alt="Ảnh" class="d-block w-100" />
             </div>
           </div>
-
-          <!-- Left and right controls/icons -->
-          <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon rounded-circle bg-white bg-opacity-25" aria-hidden="true" style="padding: 20px; background-size: 50% 50%"></span>
-          </button>
-
-          <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
-            <span class="carousel-control-next-icon rounded-circle bg-white bg-opacity-25" aria-hidden="true" style="padding: 20px; background-size: 50% 50%"></span>
-          </button>
         </div>
       </section>
     </main>
+
+    <!-- File js -->
+    <script src="./assets/js/scrip.js"></script>
 
     <!-- Bootstrap -->
     <script

@@ -1,0 +1,24 @@
+/* Khai báo biến toàn cục */
+:root {
+  --font-family: "Times New Roman", Times, serif;
+  --bg-color-badges: #f57224;
+  --text-color-badges: #fff;
+}
+
+/* Tạo thanh cuộn cho trang web */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Cấu hình style mặc định cho toàn bộ trang web */
+body {
+  font-family: var(--font-famil);
+  line-height: 1.1;
+  box-sizing: border-box;
+}
+
+/* Hiển thị số lượng của badge*/
+.quantity-badge {
+  background-color: var(--bg-color-badges);
+  color: var(--text-color-badges);
+}
