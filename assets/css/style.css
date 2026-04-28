@@ -32,6 +32,22 @@
 #carousel-banner:active {
   cursor: grabbing;
 }
+
+/* Css chuẩn kích thước (Indicators) mặc định cho màn hình lớn */
+.carousel-indicators .custom-dot {
+  width: 10px !important;
+  height: 10px !important;
+}
+
+/* Css chuẩn kích thước (Indicators) thu nhỏ cho mobile */
+@media (max-width: 767.98px) {
+  .carousel-indicators .custom-dot {
+    width: 6px !important;
+    height: 6px !important;
+    margin: 0 3px;
+  }
+}
+
 /* End header */
 
 /* GLOBAL STYLES
