@@ -32,10 +32,10 @@
   </head>
   <body>
     <!-- Header -->
-    <header class="bg-white">
+    <header class="bg-white sticky-top shadow-sm">
       <div class="d-none d-lg-block">
         <div class="container-fluid py-3 px-4">
-          <!-- Header top -->
+          <!-- Header user-->
           <div class="row align-items-center justify-content-between">
             <!-- Logo thương hiệu -->
             <div class="col-lg-2">
@@ -48,7 +48,7 @@
             <div class="col-lg-6">
               <form class="d-flex w-100 border rounded-pill p-1">
                 <input type="search" name="Search" placeholder="Tìm kiếm..." aria-label="Search" class="form-control border-0 rounded-start-pill shadow-none px-3" />
-                <button class="btn rounded-pill px-4" style="background-color: #ffe6d5; color: #f57224" type="submit">
+                <button class="btn rounded-pill px-4 root-bg-text-two" type="submit">
                   <i class="bi bi-search"></i>
                 </button>
               </form>
@@ -60,7 +60,7 @@
               <a href="#" class="text-decoration-none text-dark d-flex align-items-center gap-2">
                 <div class="position-relative bg-light rounded-circle d-flex align-items-center justify-content-center header-action-icon">
                   <i class="bi bi-cart2 fs-5"></i>
-                  <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill quantity-badge">0</span>
+                  <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill root-bg-text-one">0</span>
                 </div>
                 <span class="fw-medium" style="font-size: 15px">Giỏ hàng của tôi</span>
               </a>
@@ -69,7 +69,7 @@
               <a href="#" class="text-decoration-none text-dark d-flex align-items-center gap-2">
                 <div class="position-relative bg-light rounded-circle d-flex align-items-center justify-content-center header-action-icon">
                   <i class="bi bi-heart fs-5"></i>
-                  <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill quantity-badge">0</span>
+                  <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill root-bg-text-one">0</span>
                 </div>
                 <span class="fw-medium" style="font-size: 15px">Yêu thích</span>
               </a>
@@ -85,7 +85,7 @@
           </div>
         </div>
 
-        <!-- Header buttom -->
+        <!-- Header menu -->
         <nav class="bg-dark w-100">
           <div class="container">
             <ul class="nav justify-content-center py-2 gap-5">
@@ -115,7 +115,7 @@
         <!-- Giỏ hàng -->
         <a href="#" class="text-dark position-relative mt-2 me-2">
           <i class="bi bi-cart2 fs-3"></i>
-          <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill" style="background-color: #f57224; font-size: 0.65rem">0</span>
+          <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill root-bg-text-one fs-065">0</span>
         </a>
       </div>
 
@@ -152,29 +152,162 @@
       </div>
     </header>
 
+    <!-- Banner -->
+    <section class="banner">
+      <div id="carousel-banner" class="carousel slide" data-bs-ride="carousel">
+        <!-- Indicators -->
+        <div class="carousel-indicators mb-1">
+          <button type="button" data-bs-target="#carousel-banner" data-bs-slide-to="0" class="active rounded-circle custom-dot"></button>
+          <button type="button" data-bs-target="#carousel-banner" data-bs-slide-to="1" class="rounded-circle custom-dot"></button>
+          <button type="button" data-bs-target="#carousel-banner" data-bs-slide-to="2" class="rounded-circle custom-dot"></button>
+        </div>
+
+        <!-- The slideshow/carousel -->
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="./assets/image/banner.jpg" alt="Ảnh" class="d-block w-100" />
+          </div>
+          <div class="carousel-item">
+            <img src="./assets/image/banner.jpg" alt="ảnh" class="d-block w-100" />
+          </div>
+          <div class="carousel-item">
+            <img src="./assets/image/banner.jpg" alt="Ảnh" class="d-block w-100" />
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Main -->
     <main>
       <!-- Section-one -->
-      <section class="section-one">
-        <!-- Carousel -->
-        <div id="carousel-banner" class="carousel slide" data-bs-ride="carousel">
-          <!-- Indicators -->
-          <div class="carousel-indicators">
-            <button type="button" data-bs-target="#carousel-banner" data-bs-slide-to="0" class="active rounded-circle custom-dot"></button>
-            <button type="button" data-bs-target="#carousel-banner" data-bs-slide-to="1" class="rounded-circle custom-dot"></button>
-            <button type="button" data-bs-target="#carousel-banner" data-bs-slide-to="2" class="rounded-circle custom-dot"></button>
+      <section class="section-one py-5">
+        <div class="container">
+          <!-- Tiêu đề sản phẩm -->
+          <div class="d-flex justify-content-between align-items-center flex-wrap mb-4 gap-2">
+            <h3 class="fw-bold mb-0 text-dark fs-5 fs-md-3">SẢN PHẨM HOT NHẤT</h3>
+            <a href="#" class="text-decoration-none fw-medium d-flex align-items-center gap-1 text-dark text-nowrap"> Xem tất cả <i class="bi bi-chevron-right fs-6"></i> </a>
           </div>
 
-          <!-- The slideshow/carousel -->
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-              <img src="./assets/image/banner.jpg" alt="Ảnh" class="d-block w-100" />
+          <!-- Sản phẩm -->
+          <div class="d-flex flex-nowrap overflow-x-auto pb-3 gap-3 drag-scroll">
+            <!-- Sản phẩm 1 -->
+            <div class="flex-shrink-0 product-item">
+              <div class="card h-100 border-0 shadow-sm rounded-4 p-3">
+                <img src="./assets/image/điện thoại 1.png" class="card-img-top mx-auto mt-2 logo-img product-img" alt="iPhone 15 Pro" />
+                <div class="card-body text-center px-0 pb-0 d-flex flex-column">
+                  <h6 class="card-title text-dark mb-1">iPhone 15 Pro</h6>
+                  <p class="card-text text-dark fw-bold mb-3">$199.00</p>
+                  <div class="d-flex gap-2 mt-auto">
+                    <button class="btn text-white w-50 rounded-3 px-1 root-bg-three fs-13px fw-500px">Thêm giỏ hàng</button>
+                    <button class="btn text-white w-50 rounded-3 px-1 root-bg-text-one fs-13px fw-500px">Mua ngay</button>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div class="carousel-item">
-              <img src="./assets/image/banner.jpg" alt="ảnh" class="d-block w-100" />
+
+            <!-- Sản phẩm 2 -->
+            <div class="flex-shrink-0 product-item">
+              <div class="card h-100 border-0 shadow-sm rounded-4 p-3">
+                <img src="./assets/image/điện thoại 1.png" class="card-img-top mx-auto mt-2 logo-img product-img" alt="iPhone 15 Pro" />
+                <div class="card-body text-center px-0 pb-0 d-flex flex-column">
+                  <h6 class="card-title text-dark mb-1">iPhone 15 Pro</h6>
+                  <p class="card-text text-dark fw-bold mb-3">$199.00</p>
+                  <div class="d-flex gap-2 mt-auto">
+                    <button class="btn text-white w-50 rounded-3 px-1 root-bg-three fs-13px fw-500px">Thêm giỏ hàng</button>
+                    <button class="btn text-white w-50 rounded-3 px-1 root-bg-text-one fs-13px fw-500px">Mua ngay</button>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div class="carousel-item">
-              <img src="./assets/image/banner.jpg" alt="Ảnh" class="d-block w-100" />
+
+            <!-- Sản phẩm 3 -->
+            <div class="flex-shrink-0 product-item">
+              <div class="card h-100 border-0 shadow-sm rounded-4 p-3">
+                <img src="./assets/image/điện thoại 1.png" class="card-img-top mx-auto mt-2 logo-img product-img" alt="iPhone 15 Pro" />
+                <div class="card-body text-center px-0 pb-0 d-flex flex-column">
+                  <h6 class="card-title text-dark mb-1">iPhone 15 Pro</h6>
+                  <p class="card-text text-dark fw-bold mb-3">$199.00</p>
+                  <div class="d-flex gap-2 mt-auto">
+                    <button class="btn text-white w-50 rounded-3 px-1 root-bg-three fs-13px fw-500px">Thêm giỏ hàng</button>
+                    <button class="btn text-white w-50 rounded-3 px-1 root-bg-text-one fs-13px fw-500px">Mua ngay</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Sản phẩm 4 -->
+            <div class="flex-shrink-0 product-item">
+              <div class="card h-100 border-0 shadow-sm rounded-4 p-3">
+                <img src="./assets/image/điện thoại 1.png" class="card-img-top mx-auto mt-2 logo-img product-img" alt="iPhone 15 Pro" />
+                <div class="card-body text-center px-0 pb-0 d-flex flex-column">
+                  <h6 class="card-title text-dark mb-1">iPhone 15 Pro</h6>
+                  <p class="card-text text-dark fw-bold mb-3">$199.00</p>
+                  <div class="d-flex gap-2 mt-auto">
+                    <button class="btn text-white w-50 rounded-3 px-1 root-bg-three fs-13px fw-500px">Thêm giỏ hàng</button>
+                    <button class="btn text-white w-50 rounded-3 px-1 root-bg-text-one fs-13px fw-500px">Mua ngay</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Sản phẩm 5 -->
+            <div class="flex-shrink-0 product-item">
+              <div class="card h-100 border-0 shadow-sm rounded-4 p-3">
+                <img src="./assets/image/điện thoại 1.png" class="card-img-top mx-auto mt-2 logo-img product-img" alt="iPhone 15 Pro" />
+                <div class="card-body text-center px-0 pb-0 d-flex flex-column">
+                  <h6 class="card-title text-dark mb-1">iPhone 15 Pro</h6>
+                  <p class="card-text text-dark fw-bold mb-3">$199.00</p>
+                  <div class="d-flex gap-2 mt-auto">
+                    <button class="btn text-white w-50 rounded-3 px-1 root-bg-three fs-13px fw-500px">Thêm giỏ hàng</button>
+                    <button class="btn text-white w-50 rounded-3 px-1 root-bg-text-one fs-13px fw-500px">Mua ngay</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Sản phẩm 6 -->
+            <div class="flex-shrink-0 product-item">
+              <div class="card h-100 border-0 shadow-sm rounded-4 p-3">
+                <img src="./assets/image/điện thoại 1.png" class="card-img-top mx-auto mt-2 logo-img product-img" alt="iPhone 15 Pro" />
+                <div class="card-body text-center px-0 pb-0 d-flex flex-column">
+                  <h6 class="card-title text-dark mb-1">iPhone 15 Pro</h6>
+                  <p class="card-text text-dark fw-bold mb-3">$199.00</p>
+                  <div class="d-flex gap-2 mt-auto">
+                    <button class="btn text-white w-50 rounded-3 px-1 root-bg-three fs-13px fw-500px">Thêm giỏ hàng</button>
+                    <button class="btn text-white w-50 rounded-3 px-1 root-bg-text-one fs-13px fw-500px">Mua ngay</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Sản phẩm 7 -->
+            <div class="flex-shrink-0 product-item">
+              <div class="card h-100 border-0 shadow-sm rounded-4 p-3">
+                <img src="./assets/image/điện thoại 1.png" class="card-img-top mx-auto mt-2 logo-img product-img" alt="iPhone 15 Pro" />
+                <div class="card-body text-center px-0 pb-0 d-flex flex-column">
+                  <h6 class="card-title text-dark mb-1">iPhone 15 Pro</h6>
+                  <p class="card-text text-dark fw-bold mb-3">$199.00</p>
+                  <div class="d-flex gap-2 mt-auto">
+                    <button class="btn text-white w-50 rounded-3 px-1 root-bg-three fs-13px fw-500px">Thêm giỏ hàng</button>
+                    <button class="btn text-white w-50 rounded-3 px-1 root-bg-text-one fs-13px fw-500px">Mua ngay</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Sản phẩm 8 -->
+            <div class="flex-shrink-0 product-item">
+              <div class="card h-100 border-0 shadow-sm rounded-4 p-3">
+                <img src="./assets/image/điện thoại 1.png" class="card-img-top mx-auto mt-2 logo-img product-img" alt="iPhone 15 Pro" />
+                <div class="card-body text-center px-0 pb-0 d-flex flex-column">
+                  <h6 class="card-title text-dark mb-1">iPhone 15 Pro</h6>
+                  <p class="card-text text-dark fw-bold mb-3">$199.00</p>
+                  <div class="d-flex gap-2 mt-auto">
+                    <button class="btn text-white w-50 rounded-3 px-1 root-bg-three fs-13px fw-500px">Thêm giỏ hàng</button>
+                    <button class="btn text-white w-50 rounded-3 px-1 root-bg-text-one fs-13px fw-500px">Mua ngay</button>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>

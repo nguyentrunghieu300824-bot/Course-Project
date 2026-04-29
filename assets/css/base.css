@@ -1,8 +1,11 @@
 /* Khai báo biến toàn cục */
 :root {
   --font-family: "Times New Roman", Times, serif;
-  --bg-color-badges: #f57224;
-  --text-color-badges: #fff;
+  --bg-color-one: #f57224;
+  --bg-color-two: #ffe6d5;
+  --bg-color-three: #1a56db;
+  --text-color-one: #fff;
+  --text-color-two: #f57224;
 }
 
 /* Tạo thanh cuộn cho trang web */
@@ -18,7 +21,30 @@ body {
 }
 
 /* Hiển thị số lượng của badge*/
-.quantity-badge {
-  background-color: var(--bg-color-badges);
-  color: var(--text-color-badges);
+.root-bg-text-one {
+  background-color: var(--bg-color-one);
+  color: var(--text-color-one);
+}
+
+/* Set up màu cho nút search */
+.root-bg-text-two {
+  background-color: var(--bg-color-two);
+  color: var(--text-color-two);
+}
+
+.root-bg-three {
+  background-color: var(--bg-color-three);
+}
+
+/* Font size và font weight */
+.fs-065 {
+  font-size: 0.65rem;
+}
+
+.fs-13px {
+  font-size: 13px;
+}
+
+.fw-500px {
+  font-weight: 500;
 }

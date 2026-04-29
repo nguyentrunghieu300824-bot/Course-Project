@@ -1,51 +1,87 @@
-document.addEventListener("DOMContentLoaded", function () {
-  const carouselElement = document.getElementById("carousel-banner");
+// Khởi tạo các chức năng
+document.addEventListener("DOMContentLoaded", () => {
+  initCarouselDrag();
+  initHorizontalScroll();
+  initCardObserver();
+});
 
-  // Lấy instance của Bootstrap Carousel để điều khiển
-  const carousel = new bootstrap.Carousel(carouselElement);
+// Kéo thả Banner Carousel
+function initCarouselDrag() {
+  const carouselElement = document.getElementById("carousel-banner");
   if (!carouselElement) return;
+
+  const carousel = new bootstrap.Carousel(carouselElement);
+  const dragThreshold = 50;
 
   let isDragging = false;
   let startX = 0;
 
-  // Khi nhấn chuột xuống
-  carouselElement.addEventListener("mousedown", function (e) {
+  const stopDragging = () => {
+    isDragging = false;
+  };
+
+  carouselElement.addEventListener("mousedown", (e) => {
     isDragging = true;
-    startX = e.clientX; // Lưu lại tọa độ X ban đầu
+    startX = e.clientX;
   });
 
-  // Khi di chuyển chuột (đang giữ chuột)
-  carouselElement.addEventListener("mousemove", function (e) {
+  carouselElement.addEventListener("mousemove", (e) => {
     if (!isDragging) return;
 
-    const currentX = e.clientX;
-    const diff = startX - currentX;
+    const diff = startX - e.clientX;
 
-    // Kéo sang trái (diff > 50px) -> Chuyển slide tiếp theo
-    if (diff > 50) {
-      carousel.next();
-      isDragging = false; // Kéo xong thì reset để không bị trôi nhiều slide 1 lúc
-    }
-    // Kéo sang phải (diff < -50px) -> Trở về slide trước
-    else if (diff < -50) {
-      carousel.prev();
-      isDragging = false;
+    if (Math.abs(diff) > dragThreshold) {
+      diff > 0 ? carousel.next() : carousel.prev();
+      stopDragging();
     }
   });
 
-  // Khi nhả chuột ra hoặc chuột rời khỏi khu vực ảnh
-  carouselElement.addEventListener("mouseup", function () {
-    isDragging = false;
-  });
+  carouselElement.addEventListener("mouseup", stopDragging);
+  carouselElement.addEventListener("mouseleave", stopDragging);
 
-  carouselElement.addEventListener("mouseleave", function () {
-    isDragging = false;
+  carouselElement.querySelectorAll("img").forEach((img) => {
+    img.addEventListener("dragstart", (e) => e.preventDefault());
   });
+}
 
-  // RẤT QUAN TRỌNG: Ngăn chặn trình duyệt hiển thị "ảnh mờ" (ghost image) khi kéo chuột
-  carouselElement.querySelectorAll("img").forEach(function (img) {
-    img.addEventListener("dragstart", function (e) {
+// Cuộn ngang mượt mà cho sản phẩm
+function initHorizontalScroll() {
+  const slider = document.querySelector(".drag-scroll");
+  if (!slider) return;
+
+  const scrollAmount = 300;
+
+  slider.addEventListener(
+    "wheel",
+    (e) => {
       e.preventDefault();
+      slider.scrollBy({
+        left: e.deltaY > 0 ? scrollAmount : -scrollAmount,
+        behavior: "smooth",
+      });
+    },
+    { passive: false },
+  );
+}
+
+// Hiệu ứng Animation khi cuộn
+function initCardObserver() {
+  const dragScrollContainer = document.querySelector(".drag-scroll");
+  const cards = document.querySelectorAll(".drag-scroll .card");
+
+  if (!dragScrollContainer || cards.length === 0) return;
+
+  const observerOptions = {
+    root: dragScrollContainer,
+    rootMargin: "0px",
+    threshold: 0.6,
+  };
+
+  const cardObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      entry.target.classList.toggle("in-view", entry.isIntersecting);
     });
-  });
-});
+  }, observerOptions);
+
+  cards.forEach((card) => cardObserver.observe(card));
+}
